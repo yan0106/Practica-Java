@@ -4,6 +4,7 @@ excepción/error. */
 graves de la JVM provocados por mala gestión de memoria */
 
 package exception;
+
 import java.util.*;
 
 public class Basura {
@@ -14,6 +15,14 @@ public class Basura {
     public Basura(String nombre, int id) {
         this.nombre = nombre;
         this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public static void main(String[] args) {
