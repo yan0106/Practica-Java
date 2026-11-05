@@ -5,16 +5,16 @@ public class GestorHilos {
     public synchronized void solicitarPermiso() {
         while (hilosActivos >= MAX_HILOS) {
             try {
-                
+                wait();
             } catch (Exception e) {
-                // TODO: handle exception
-            }
-            
+                System.out.println(e.getMessage());
+            }            
         }
         hilosActivos++;
     }
 
     public synchronized void liberarPermiso(){
-        
+        hilosActivos--;
+        notifyAll();
     }
 }
